@@ -21,10 +21,8 @@ export default function Navbar() {
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.inner}>
-          
-          {/* Left Section */}
           <div className={styles.leftSection}>
-            <Link href="/">
+            <Link href="/" className={styles.logoLink}>
               <Image
                 src="/Logo/cinesphere-high-resolution-logo-transparent.png"
                 alt="Cinesphere Logo"
@@ -41,44 +39,34 @@ export default function Navbar() {
             </nav>
           </div>
 
-          {/* Right Section */}
           <div className={styles.rightSection}>
-            <IconButton 
-              src="/Logo/search_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" 
-              alt="Search" 
-            />
-            
-            <Link href="/profile" className={styles.profileLink}>
-              <Image 
-                src="/Logo/user.png" 
-                alt="User Profile" 
-                width={32} 
-                height={32} 
-                className={styles.profileImage}
-              />
+            <Link href="/my-list" className={styles.ctaLink}>
+              Watchlist
             </Link>
-
-            <div className={styles.mobileMenuBtn}>
-              <IconButton 
-                src={isMobileMenuOpen ? "/Logo/close_logo.svg" : "/Logo/menu_logo.svg"} 
-                alt="Menu"
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              />
-            </div>
+            <button
+              type="button"
+              className={styles.mobileMenuBtn}
+              onClick={() => setIsMobileMenuOpen((open) => !open)}
+              aria-expanded={isMobileMenuOpen}
+              aria-label="Toggle navigation"
+            >
+              <span />
+              <span />
+              <span />
+            </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className={styles.mobileNavDropdown}>
           <nav className={styles.mobileNavList}>
             {NAV_LINKS.map((link) => (
-              <NavItem 
-                key={link.label} 
-                label={link.label} 
-                href={link.href} 
-                onClick={() => setIsMobileMenuOpen(false)} 
+              <NavItem
+                key={link.label}
+                label={link.label}
+                href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
               />
             ))}
           </nav>
