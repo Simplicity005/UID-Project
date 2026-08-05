@@ -1,0 +1,27 @@
+.navLink {
+  color: #d1d5db;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+}
+
+.navLink:hover {
+  color: #ef4444; /* Cinesphere red */
+  background-color: #1f2937;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  .navLink {
+    padding: 0;
+    border-radius: 0;
+  }
+  .navLink:hover {
+    background-color: transparent;
+  }
+}
