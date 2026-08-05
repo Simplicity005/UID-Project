@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import NavItem from "../ui/NavItem";
-import IconButton from "../ui/IconButton";
 import styles from "./Navbar.module.css";
 
 const NAV_LINKS = [
@@ -45,7 +44,7 @@ export default function Navbar() {
             </Link>
             <button
               type="button"
-              className={styles.mobileMenuBtn}
+              className={`${styles.mobileMenuBtn} ${isMobileMenuOpen ? styles.mobileMenuBtnOpen : ""}`}
               onClick={() => setIsMobileMenuOpen((open) => !open)}
               aria-expanded={isMobileMenuOpen}
               aria-label="Toggle navigation"
@@ -58,20 +57,21 @@ export default function Navbar() {
         </div>
       </div>
 
-      {isMobileMenuOpen && (
-        <div className={styles.mobileNavDropdown}>
-          <nav className={styles.mobileNavList}>
-            {NAV_LINKS.map((link) => (
-              <NavItem
-                key={link.label}
-                label={link.label}
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-              />
-            ))}
-          </nav>
-        </div>
-      )}
+      <div
+        className={`${styles.mobileNavDropdown} ${isMobileMenuOpen ? styles.mobileNavDropdownOpen : ""}`}
+        aria-hidden={!isMobileMenuOpen}
+      >
+        <nav className={styles.mobileNavList}>
+          {NAV_LINKS.map((link) => (
+            <NavItem
+              key={link.label}
+              label={link.label}
+              href={link.href}
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
+          ))}
+        </nav>
+      </div>
     </header>
   );
 }
