@@ -1,6 +1,6 @@
 Title: UID-Project
-Domain: [Domain Keyword e.g. Embedded, AI, ML, Robotics, Software, Hardware]
-Tags: [Tech 1, Tech 2, Tech 3]
-Year: 2026
+Domain: Software
+Tags: UI, Design, Prototyping, Frontend
+Year: 2024
 About:
-[Write a 1-3 sentence summary of the project here. This text will appear on the project card.]
+This repository contains a UI-focused experimental project designed to explore interface ideas and prototype concepts. It serves as a small design and frontend trial for iterating on user experience ideas.
