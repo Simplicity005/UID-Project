@@ -1,6 +1,7 @@
-Title: UID-Project
+Title: UID Project
 Domain: Software
 Tags: UI, Design, Prototyping, Frontend
 Year: 2024
+
 About:
-This repository contains a UI-focused experimental project designed to explore interface ideas and prototype concepts. It serves as a small design and frontend trial for iterating on user experience ideas.
+This repository contains a UI-focused prototype designed to explore interface ideas and product interactions. It serves as a small design and frontend experiment for testing user experience concepts.
